@@ -181,7 +181,8 @@ class PDFViewerFromAsset extends StatelessWidget {
                     final PDFViewController pdfController = snapshot.data!;
                     final int currentPage =
                         (await pdfController.getCurrentPage())! + 1;
-                    final int numberOfPages = await pdfController.getPageCount() ?? 0;
+                    final int numberOfPages =
+                        await pdfController.getPageCount() ?? 0;
                     if (numberOfPages > currentPage) {
                       await pdfController.setPage(currentPage);
                     }
